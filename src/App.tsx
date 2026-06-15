@@ -13,15 +13,21 @@ function App() {
     <div className="bg-primary font-sans text-light overflow-x-hidden">
       {/* Hero Section */}
       <div className="relative min-h-screen w-full">
-        {/* Video Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4"
-        />
+        {/* Background Image with Slow Zoom */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0 bg-black">
+          <style>{`
+            @keyframes slowZoom {
+              0% { transform: scale(1); }
+              100% { transform: scale(1.15); }
+            }
+          `}</style>
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
+            alt="Premium Real Estate"
+            className="w-full h-full object-cover opacity-60"
+            style={{ animation: 'slowZoom 30s ease-in-out infinite alternate' }}
+          />
+        </div>
 
         {/* Main Content Overlay */}
         <div className="relative z-10 min-h-screen flex flex-col">
