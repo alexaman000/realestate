@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="bg-primary font-sans text-light overflow-x-hidden">
       {/* Hero Section */}
-      <div className="relative min-h-screen w-full">
+      <div className="relative min-h-[100dvh] w-full">
         {/* Video Background with Slow Zoom */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0 bg-black">
           <style>{`
@@ -28,12 +28,13 @@ function App() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-60"
             style={{ animation: 'slowZoom 30s ease-in-out infinite alternate' }}
+            poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4"
           />
         </div>
 
         {/* Main Content Overlay */}
-        <div className="relative z-10 min-h-screen flex flex-col">
+        <div className="relative z-10 min-h-[100dvh] flex flex-col">
           {/* Navbar */}
           <div className="px-6 md:px-12 lg:px-16 pt-6">
             <nav className="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
