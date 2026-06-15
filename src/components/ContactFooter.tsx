@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Globe, Share2, Link } from 'lucide-react';
+import { MapPin, Phone, Clock, Share2, Link } from 'lucide-react';
 
 export function ContactFooter() {
   return (
