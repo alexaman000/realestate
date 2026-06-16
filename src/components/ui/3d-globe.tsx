@@ -33,6 +33,8 @@ export interface Globe3DConfig {
   minDistance?: number;
   maxDistance?: number;
   initialRotation?: { x: number; y: number };
+  initialLocation?: { lat: number; lng: number; altitude?: number };
+  highlightArea?: { lat: number; lng: number; size?: number; color?: string };
   markerSize?: number;
   showWireframe?: boolean;
   wireframeColor?: string;
@@ -187,7 +189,49 @@ function Marker({
       </group>
     </group>
   );
+}// ============================================================================
+// Area Highlight Component
+// ============================================================================
+
+interface AreaHighlightProps {
+  lat: number;
+  lng: number;
+  globeRadius: number;
+  color: string;
+  size?: number;
 }
+
+function AreaHighlight({ lat, lng, globeRadius, color, size = 0.15 }: AreaHighlightProps) {
+  const surfacePosition = useMemo(() => {
+    return latLngToVector3(lat, lng, globeRadius * 1.002);
+  }, [lat, lng, globeRadius]);
+
+  const quaternion = useMemo(() => {
+    const direction = surfacePosition.clone().normalize();
+    const q = new THREE.Quaternion();
+    q.setFromUnitVectors(new THREE.Vector3(0, 0, 1), direction);
+    return q;
+  }, [surfacePosition]);
+
+  return (
+    <group position={surfacePosition} quaternion={quaternion}>
+      {/* Outer pulsing ring */}
+      <mesh>
+        <ringGeometry args={[size * 0.8, size, 32]} />
+        <meshBasicMaterial color={color} transparent opacity={0.4} side={THREE.DoubleSide} />
+      </mesh>
+      {/* Inner semi-transparent fill */}
+      <mesh>
+        <circleGeometry args={[size * 0.8, 32]} />
+        <meshBasicMaterial color={color} transparent opacity={0.15} side={THREE.DoubleSide} />
+      </mesh>
+    </group>
+  );
+}
+
+// ============================================================================
+// Rotating Globe with Markers (all rotate together)
+// ============================================================================
 
 interface RotatingGlobeProps {
   config: Required<Globe3DConfig>;
@@ -248,6 +292,16 @@ function RotatingGlobe({
             opacity={0.08}
           />
         </mesh>
+      )}
+
+      {config.highlightArea && (
+        <AreaHighlight
+          lat={config.highlightArea.lat}
+          lng={config.highlightArea.lng}
+          globeRadius={config.radius}
+          color={config.highlightArea.color || config.wireframeColor}
+          size={config.highlightArea.size}
+        />
       )}
 
       {markers.map((marker, index) => (
@@ -325,9 +379,15 @@ function Scene({ markers, config, onMarkerClick, onMarkerHover }: SceneProps) {
   const { camera } = useThree();
 
   React.useEffect(() => {
-    camera.position.set(0, 0, config.radius * 3.5);
+    if (config.initialLocation) {
+      const alt = config.initialLocation.altitude || 2.5;
+      const pos = latLngToVector3(config.initialLocation.lat, config.initialLocation.lng, config.radius * alt);
+      camera.position.copy(pos);
+    } else {
+      camera.position.set(0, 0, config.radius * 3.5);
+    }
     camera.lookAt(0, 0, 0);
-  }, [camera, config.radius]);
+  }, [camera, config.radius, config.initialLocation]);
 
   return (
     <>
@@ -403,6 +463,8 @@ const defaultConfig: Required<Globe3DConfig> = {
   minDistance: 5,
   maxDistance: 15,
   initialRotation: { x: 0, y: 0 },
+  initialLocation: undefined,
+  highlightArea: undefined,
   markerSize: 0.06,
   showWireframe: false,
   wireframeColor: "#4a9eff",
