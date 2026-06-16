@@ -1,4 +1,4 @@
-import { Globe3D, GlobeMarker } from "./ui/3d-globe";
+import { Globe3D, type GlobeMarker } from "./ui/3d-globe";
 import { motion } from "framer-motion";
 
 const sampleMarkers: GlobeMarker[] = [

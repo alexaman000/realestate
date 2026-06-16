@@ -72,7 +72,6 @@ function latLngToVector3(
 interface MarkerProps {
   marker: GlobeMarker;
   radius: number;
-  defaultSize: number;
   onClick?: (marker: GlobeMarker) => void;
   onHover?: (marker: GlobeMarker | null) => void;
 }
@@ -80,7 +79,6 @@ interface MarkerProps {
 function Marker({
   marker,
   radius,
-  defaultSize,
   onClick,
   onHover,
 }: MarkerProps) {
