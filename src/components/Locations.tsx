@@ -3,40 +3,40 @@ import { motion } from "framer-motion";
 
 const sampleMarkers: GlobeMarker[] = [
   {
-    lat: 21.1904,
-    lng: 81.2849,
-    src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
-    label: "Durg",
-  },
-  {
-    lat: 21.1938,
-    lng: 81.3509,
-    src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
-    label: "Bhilai",
-  },
-  {
-    lat: 21.2514,
-    lng: 81.6296,
-    src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
-    label: "Raipur",
-  },
-  {
-    lat: 21.2167,
-    lng: 81.4333,
-    src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
-    label: "Charoda",
-  },
-  {
-    lat: 21.1000,
-    lng: 81.0333,
+    lat: 23.5,
+    lng: 80.0,
     src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
     label: "Rajnandgaon",
   },
   {
-    lat: 21.2667,
-    lng: 81.5167,
+    lat: 22.0,
+    lng: 78.5,
+    src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
+    label: "Durg",
+  },
+  {
+    lat: 21.2,
+    lng: 81.3,
+    src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
+    label: "Bhilai",
+  },
+  {
+    lat: 19.5,
+    lng: 80.0,
+    src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
+    label: "Charoda",
+  },
+  {
+    lat: 20.0,
+    lng: 83.5,
     src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
     label: "Kumhari",
+  },
+  {
+    lat: 22.5,
+    lng: 83.5,
+    src: "https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png",
+    label: "Raipur",
   },
 ];
 

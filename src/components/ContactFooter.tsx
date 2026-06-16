@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Clock, Share2, Link } from 'lucide-react';
+import { MapPin, Phone, Clock, Share2, Facebook } from 'lucide-react';
 
 export function ContactFooter() {
   return (
@@ -134,12 +134,19 @@ export function ContactFooter() {
             <a href="https://instagram.com/rudraconstruction.engineers" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#bc1888] hover:text-white transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-gold hover:text-primary transition-all">
+            <a href="https://www.facebook.com/1159915317208516" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-all">
+              <Facebook className="w-4 h-4" />
+            </a>
+            <button onClick={() => {
+              if (navigator.share) {
+                navigator.share({ title: 'Rudra Engineers', url: window.location.href });
+              } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+              }
+            }} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-gold hover:text-primary transition-all">
               <Share2 className="w-4 h-4" />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-gold hover:text-primary transition-all">
-              <Link className="w-4 h-4" />
-            </a>
+            </button>
           </div>
         </div>
         <div className="text-center py-6 border-t border-white/5 text-sm text-gray-500">
