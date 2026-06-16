@@ -49,10 +49,27 @@ export function ContactFooter() {
             </div>
           </div>
           
-          <a href="https://instagram.com/rudraconstruction.engineers" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            Follow us on Instagram
-          </a>
+          <div className="flex flex-wrap gap-4">
+            <a href="https://instagram.com/rudraconstruction.engineers" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              Follow us on Instagram
+            </a>
+            <a href="https://www.facebook.com/1159915317208516" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#1877F2] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+              <Facebook className="w-5 h-5" />
+              Follow us on Facebook
+            </a>
+            <button onClick={() => {
+              if (navigator.share) {
+                navigator.share({ title: 'Rudra Engineers', url: window.location.href });
+              } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+              }
+            }} className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-colors">
+              <Share2 className="w-5 h-5" />
+              Share
+            </button>
+          </div>
         </div>
 
         <motion.div 
@@ -149,8 +166,9 @@ export function ContactFooter() {
             </button>
           </div>
         </div>
-        <div className="text-center py-6 border-t border-white/5 text-sm text-gray-500">
-          © {new Date().getFullYear()} Rudra Engineers. All rights reserved.
+        <div className="text-center py-6 border-t border-white/5 text-sm text-gray-500 flex flex-col items-center gap-2">
+          <span>© {new Date().getFullYear()} Rudra Engineers. All rights reserved.</span>
+          <span>Built by <a href="https://www.linkedin.com/company/webbybuilder/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-yellow-500 font-medium transition-colors">WebbyBuilder</a></span>
         </div>
       </div>
     </footer>
