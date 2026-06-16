@@ -2,7 +2,7 @@ import { FadeIn } from './components/FadeIn';
 import { AnimatedHeading } from './components/AnimatedHeading';
 import { About } from './components/About';
 import { Services } from './components/Services';
-import { Projects } from './components/Projects';
+import { Locations } from './components/Locations';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { Gallery } from './components/Gallery';
 import { TestimonialsFAQ } from './components/TestimonialsFAQ';
@@ -49,7 +49,7 @@ function App() {
               {/* Center: Links */}
               <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
                 <a href="#about" className="hover:text-white transition-colors">About</a>
-                <a href="#projects" className="hover:text-white transition-colors">Projects</a>
+                <a href="#locations" className="hover:text-white transition-colors">Locations</a>
                 <a href="#services" className="hover:text-white transition-colors">Services</a>
                 <a href="#gallery" className="hover:text-white transition-colors">Gallery</a>
               </div>
@@ -107,7 +107,7 @@ function App() {
 
       <About />
       <Services />
-      <Projects />
+      <Locations />
       <WhyChooseUs />
       <Gallery />
       <TestimonialsFAQ />
