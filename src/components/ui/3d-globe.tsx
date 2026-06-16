@@ -33,8 +33,8 @@ export interface Globe3DConfig {
   minDistance?: number;
   maxDistance?: number;
   initialRotation?: { x: number; y: number };
-  initialLocation?: { lat: number; lng: number; altitude?: number };
-  highlightArea?: { lat: number; lng: number; size?: number; color?: string };
+  initialLocation?: { lat: number; lng: number; altitude?: number } | undefined;
+  highlightArea?: { lat: number; lng: number; size?: number; color?: string } | undefined;
   markerSize?: number;
   showWireframe?: boolean;
   wireframeColor?: string;
