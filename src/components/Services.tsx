@@ -66,7 +66,7 @@ export function Services() {
               className={`relative liquid-glass rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 ${tier.popular ? 'border-2 border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)]' : 'border border-white/10'}`}
             >
               {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-primary px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+                <div className="absolute top-6 right-6 bg-gold text-primary px-3 py-1 rounded-full text-xs font-bold tracking-wide">
                   MOST POPULAR
                 </div>
               )}
