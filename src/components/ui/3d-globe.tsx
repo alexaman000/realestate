@@ -33,8 +33,8 @@ export interface Globe3DConfig {
   minDistance?: number;
   maxDistance?: number;
   initialRotation?: { x: number; y: number };
-  initialLocation?: { lat: number; lng: number; altitude?: number } | undefined;
-  highlightArea?: { lat: number; lng: number; size?: number; color?: string } | undefined;
+  initialLocation?: { lat: number; lng: number; altitude?: number } | null;
+  highlightArea?: { lat: number; lng: number; size?: number; color?: string } | null;
   markerSize?: number;
   showWireframe?: boolean;
   wireframeColor?: string;
@@ -234,7 +234,7 @@ function AreaHighlight({ lat, lng, globeRadius, color, size = 0.15 }: AreaHighli
 // ============================================================================
 
 interface RotatingGlobeProps {
-  config: Globe3DConfig;
+  config: Required<Globe3DConfig>;
   markers: GlobeMarker[];
   onMarkerClick?: (marker: GlobeMarker) => void;
   onMarkerHover?: (marker: GlobeMarker | null) => void;
@@ -370,7 +370,7 @@ function Atmosphere({ radius, color, intensity, blur }: AtmosphereProps) {
 
 interface SceneProps {
   markers: GlobeMarker[];
-  config: Globe3DConfig;
+  config: Required<Globe3DConfig>;
   onMarkerClick?: (marker: GlobeMarker) => void;
   onMarkerHover?: (marker: GlobeMarker | null) => void;
 }
@@ -447,7 +447,7 @@ function LoadingFallback() {
   );
 }
 
-const defaultConfig = {
+const defaultConfig: Required<Globe3DConfig> = {
   radius: 2,
   globeColor: "#1a1a2e",
   textureUrl: DEFAULT_EARTH_TEXTURE,
@@ -463,8 +463,8 @@ const defaultConfig = {
   minDistance: 5,
   maxDistance: 15,
   initialRotation: { x: 0, y: 0 },
-  initialLocation: undefined,
-  highlightArea: undefined,
+  initialLocation: null,
+  highlightArea: null,
   markerSize: 0.06,
   showWireframe: false,
   wireframeColor: "#4a9eff",
