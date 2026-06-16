@@ -447,7 +447,7 @@ function LoadingFallback() {
   );
 }
 
-const defaultConfig: Required<Globe3DConfig> = {
+const defaultConfig = {
   radius: 2,
   globeColor: "#1a1a2e",
   textureUrl: DEFAULT_EARTH_TEXTURE,
