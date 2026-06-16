@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: 'Rajesh Sharma',
     role: 'Homeowner',
-    content: 'Rudra Construction transformed our vision into reality. The luxury villa they built for us exceeded all expectations in terms of quality and timely delivery.',
+    content: 'Rudra Engineers transformed our vision into reality. The luxury villa they built for us exceeded all expectations in terms of quality and timely delivery.',
     rating: 5,
   },
   {

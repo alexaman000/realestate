@@ -114,7 +114,7 @@ export function ContactFooter() {
           allowFullScreen 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
-          title="Rudra Construction Engineers Location"
+          title="Rudra Engineers Location"
         ></iframe>
       </div>
 
@@ -122,10 +122,8 @@ export function ContactFooter() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center font-serif font-bold text-primary text-xl">
-              RC
-            </div>
-            <div className="text-2xl font-serif text-white">Rudra Construction</div>
+            <img src="https://i.ibb.co/QyqTmSL/Chat-GPT-Image-Jun-16-2026-12-29-31-PM.png" alt="Rudra Engineers Logo" className="w-10 h-10 object-contain rounded-lg bg-white/10 p-1" />
+            <div className="text-2xl font-serif text-white">Rudra Engineers</div>
           </div>
           <div className="flex gap-8 text-sm text-gray-400">
             <a href="#about" className="hover:text-gold transition-colors">About</a>
@@ -145,7 +143,7 @@ export function ContactFooter() {
           </div>
         </div>
         <div className="text-center py-6 border-t border-white/5 text-sm text-gray-500">
-          © {new Date().getFullYear()} Rudra Construction Engineers. All rights reserved.
+          © {new Date().getFullYear()} Rudra Engineers. All rights reserved.
         </div>
       </div>
     </footer>

@@ -37,7 +37,7 @@ export function About() {
             Building structures that stand strong for generations.
           </h3>
           <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-            Rudra Construction Engineers delivers high-quality residential, commercial and engineering solutions with a commitment to quality, safety and innovation. Our mission is to create structures that stand strong for generations.
+            Rudra Engineers delivers high-quality residential, commercial and engineering solutions with a commitment to quality, safety and innovation. Our mission is to create structures that stand strong for generations.
           </p>
 
           {/* Animated Counters */}
