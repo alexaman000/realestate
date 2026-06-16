@@ -234,7 +234,7 @@ function AreaHighlight({ lat, lng, globeRadius, color, size = 0.15 }: AreaHighli
 // ============================================================================
 
 interface RotatingGlobeProps {
-  config: Required<Globe3DConfig>;
+  config: Globe3DConfig;
   markers: GlobeMarker[];
   onMarkerClick?: (marker: GlobeMarker) => void;
   onMarkerHover?: (marker: GlobeMarker | null) => void;
@@ -370,7 +370,7 @@ function Atmosphere({ radius, color, intensity, blur }: AtmosphereProps) {
 
 interface SceneProps {
   markers: GlobeMarker[];
-  config: Required<Globe3DConfig>;
+  config: Globe3DConfig;
   onMarkerClick?: (marker: GlobeMarker) => void;
   onMarkerHover?: (marker: GlobeMarker | null) => void;
 }
