@@ -255,7 +255,6 @@ function RotatingGlobe({
           key={`marker-${index}-${marker.lat}-${marker.lng}`}
           marker={marker}
           radius={config.radius}
-          defaultSize={config.markerSize}
           onClick={onMarkerClick}
           onHover={onMarkerHover}
         />
