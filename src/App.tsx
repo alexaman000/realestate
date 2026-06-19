@@ -6,6 +6,7 @@ import { Locations } from './components/Locations';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { Gallery } from './components/Gallery';
 import { TestimonialsFAQ } from './components/TestimonialsFAQ';
+import { Team } from './components/Team';
 import { ContactFooter } from './components/ContactFooter';
 
 function App() {
@@ -108,6 +109,7 @@ function App() {
       <About />
       <Services />
       <Locations />
+      <Team />
       <WhyChooseUs />
       <Gallery />
       <TestimonialsFAQ />

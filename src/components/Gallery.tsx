@@ -1,12 +1,9 @@
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000', alt: 'Construction sites', span: 'col-span-2 row-span-2' },
-  { src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000', alt: 'Completed buildings', span: 'col-span-1 row-span-1' },
-  { src: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1000', alt: 'Luxury interiors', span: 'col-span-1 row-span-2' },
-  { src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1000', alt: 'Structural work', span: 'col-span-1 row-span-1' },
-  { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000', alt: 'Night lighting', span: 'col-span-2 row-span-1' },
-  { src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1000', alt: 'Drone views', span: 'col-span-1 row-span-1' }
+  { src: '/images/office.jpeg', alt: 'Our Office', span: 'col-span-2 row-span-2' },
+  { src: '/images/site_progress.jpeg', alt: 'Site Progress & Design Concept', span: 'col-span-2 row-span-1' },
+  { src: '/images/school_project.jpeg', alt: 'Complete School Campus Development', span: 'col-span-2 row-span-1' },
 ];
 
 export function Gallery() {
