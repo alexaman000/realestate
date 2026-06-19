@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: '/images/office.jpeg', alt: 'Our Office', span: 'col-span-2 row-span-2' },
-  { src: '/images/site_progress.jpeg', alt: 'Site Progress & Design Concept', span: 'col-span-2 row-span-1' },
-  { src: '/images/school_project.jpeg', alt: 'Complete School Campus Development', span: 'col-span-2 row-span-1' },
+  { src: '/images/office.jpeg', alt: 'Our Office' },
+  { src: '/images/site_progress.jpeg', alt: 'Site Progress & Design Concept' },
+  { src: '/images/school_project.jpeg', alt: 'Complete School Campus Development' },
 ];
 
 export function Gallery() {
@@ -30,23 +30,23 @@ export function Gallery() {
           </motion.h3>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {images.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative group overflow-hidden rounded-xl ${image.span}`}
+              className="relative group overflow-hidden rounded-xl bg-black/40 border border-white/10 flex items-center justify-center h-[500px]"
             >
               <img 
                 src={image.src} 
                 alt={image.alt}
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 p-2"
               />
-              <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                <p className="text-white font-serif tracking-wider text-lg">{image.alt}</p>
+              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm p-6 text-center">
+                <p className="text-white font-serif tracking-wider text-xl font-medium">{image.alt}</p>
               </div>
             </motion.div>
           ))}
