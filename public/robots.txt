@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://rudraengineers.online/sitemap.xml
+Sitemap: https://www.rudraengineers.online/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 5
