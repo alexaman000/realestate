@@ -4,6 +4,8 @@ const images = [
   { src: '/images/office.jpeg', alt: 'Our Office' },
   { src: '/images/site_progress.jpeg', alt: 'Site Progress & Design Concept' },
   { src: '/images/school_project.jpeg', alt: 'Complete School Campus Development' },
+  { src: '/images/project_kurud.jpg', alt: 'Project Progress: Kurud, Bhilai' },
+  { src: '/images/project_model_town.jpg', alt: 'Project Progress: Model Town, Bhilai' },
 ];
 
 export function Gallery() {
